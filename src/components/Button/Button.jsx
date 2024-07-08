@@ -7,7 +7,6 @@ const loremIpsumText = [
   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 ];
-
 const Button = () => {
   const [count, setCount] = useState(1);
   const [type, setType] = useState('paragraphs');
@@ -16,30 +15,23 @@ const Button = () => {
   const handleGenerate = () => {
     let generatedText = '';
 
-    switch (type) {
-      case 'paragraphs':
-        for (let i = 0; i < count; i++) {
-          generatedText += `<p>${loremIpsumText.join(' ')}</p>`;
-        }
-        break;
-      case 'sentences':
-        for (let i = 0; i < count; i++) {
-          generatedText += `${loremIpsumText[i % loremIpsumText.length]} `;
-        }
-        break;
-      case 'words':
-        const words = loremIpsumText.join(' ').split(' ');
-        for (let i = 0; i < count; i++) {
-          generatedText += `${words[i % words.length]} `;
-        }
-        break;
-      default:
-        break;
+    if (type === 'paragraphs') {
+      for (let i = 0; i < count; i++) {
+        generatedText += `<p>${loremIpsumText.join(' ')}</p>`;
+      }
+    } else if (type === 'sentences') {
+      for (let i = 0; i < count; i++) {
+        generatedText += `${loremIpsumText[i % loremIpsumText.length]} `;
+      }
+    } else if (type === 'words') {
+      const words = loremIpsumText.join(' ').split(' ');
+      for (let i = 0; i < count; i++) {
+        generatedText += `${words[i % words.length]} `;
+      }
     }
 
     setOutput(generatedText);
   };
-
   return (
     <div className="container mx-auto my-8 p-4 w-full max-w-2xl bg-gray-200 border border-gray-400 rounded-lg">
       <h1 className="text-center mb-4 text-xl font-bold">Lorem Ipsum Generator</h1>
