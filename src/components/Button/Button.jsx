@@ -33,11 +33,11 @@ const Button = () => {
     setOutput(generatedText);
   };
   return (
-    <div className="container mx-auto my-8 p-4 w-full max-w-2xl bg-gray-200 border border-gray-400 rounded-lg">
+    <div className="container mx-auto my-8 p-4 w-full max-w-2xl bg-gray-200 border rounded-lg">
       <h1 className="text-center mb-4 text-xl font-bold">Lorem Ipsum Generator</h1>
       <div className="flex flex-row space-x-4">
         <input
-          className="py-2 px-1 border border-custom-dwhite border-s-2 rounded-lg bg-custom-white w-32"
+          className="py-2 px-1 border-2 border-custom-dwhite  rounded-lg bg-custom-white w-32"
           type="number"
           id="count"
           name="count"
@@ -46,7 +46,7 @@ const Button = () => {
           onChange={(e) => setCount(e.target.value)}
         />
         <select
-          className="py-2 px-1 border border-red-700 rounded-lg bg-custom-white"
+          className="py-2 px-1 border-2 border-custom-dwhite rounded-lg bg-custom-white"
           id="type"
           name="type"
           value={type}
