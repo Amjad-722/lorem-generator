@@ -7,6 +7,8 @@ module.exports = {
     extend: {
       colors: {
         'custom-red': '#FF6A67',
+        'custom-white': '#FFFFFF',
+        'custom-dwhite': '#D3DBE4',
       },
       theme: {
         container: {
