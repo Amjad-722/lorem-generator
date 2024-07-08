@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
+import loremIpsumData from '../Data/loremIpsumData.json'; // Adjust the path as necessary
 
-const loremIpsumText = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-  "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-];
-const Button = () => {
+const LoremIpsumGenerator = () => {
   const [count, setCount] = useState(1);
   const [type, setType] = useState('paragraphs');
   const [output, setOutput] = useState('');
 
   const handleGenerate = () => {
     let generatedText = '';
+    const loremIpsumText = loremIpsumData.loremIpsumText;
 
     if (type === 'paragraphs') {
       for (let i = 0; i < count; i++) {
@@ -29,15 +24,19 @@ const Button = () => {
         generatedText += `${words[i % words.length]} `;
       }
     }
+    else{ 
+    alert("select any of them!")
+    }
 
     setOutput(generatedText);
   };
+
   return (
     <div className="container mx-auto my-8 p-4 w-full max-w-2xl bg-gray-200 border rounded-lg">
       <h1 className="text-center mb-4 text-xl font-bold">Lorem Ipsum Generator</h1>
       <div className="flex flex-row space-x-4">
         <input
-          className="py-2 px-1 border-2 border-custom-dwhite  rounded-lg bg-custom-white w-32"
+          className="py-2 px-1 border-2 border-custom-dwhite rounded-lg bg-custom-white w-32"
           type="number"
           id="count"
           name="count"
@@ -55,14 +54,17 @@ const Button = () => {
           <option value="paragraphs">Paragraphs</option>
           <option value="sentences">Sentences</option>
           <option value="words">Words</option>
+          <option value="letter">letter</option>
+          <option value="asdfsss">asdf</option>
         </select>
         <button className="px-4 py-2 border border-red-700 rounded-lg bg-custom-red" onClick={handleGenerate}>
           Generate!
         </button>
       </div>
+     
       <div className="mt-4" dangerouslySetInnerHTML={{ __html: output }}></div>
     </div>
   );
 };
 
-export default Button;
+export default LoremIpsumGenerator;
