@@ -32,8 +32,8 @@ const LoremIpsumGenerator = () => {
   };
 
   return (
-    <div className="container mx-auto my-8 p-4 w-full max-w-2xl bg-gray-200 border rounded-lg">
-      <h1 className="text-center mb-4 text-xl font-bold">Lorem Ipsum Generator</h1>
+    <div className="container mx-auto w-1/2 my-8 p-4  max-w-2xl bg-sky-700 border rounded-lg">
+      <h1 className="text-center mb-4 text-4xl text-white font-serif">Lorem Ipsum Generator</h1>
       <div className="flex flex-row space-x-4">
         <input
           className="py-2 px-1 border-2 border-custom-dwhite rounded-lg bg-custom-white w-32"
@@ -45,7 +45,7 @@ const LoremIpsumGenerator = () => {
           onChange={(e) => setCount(e.target.value)}
         />
         <select
-          className="py-2 px-1 border-2 border-custom-dwhite rounded-lg bg-custom-white"
+          className="py-2 px-1 border-2 border-custom-dwhite rounded-lg bg-red-500 text-white text-2xl"
           id="type"
           name="type"
           value={type}
@@ -62,7 +62,7 @@ const LoremIpsumGenerator = () => {
         </button>
       </div>
      
-      <div className="mt-4" dangerouslySetInnerHTML={{ __html: output }}></div>
+      <div className="mt-4 text-white font-mono " dangerouslySetInnerHTML={{ __html: output }}></div>
     </div>
   );
 };
