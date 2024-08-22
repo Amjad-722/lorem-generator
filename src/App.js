@@ -6,7 +6,7 @@ import Button from './components/Button/Button';
 
 function App() {
   return (
-    <div className="App container px-2">
+    <div className="App container w-3/4 px-2">
   <Button/>
     </div>
   );
