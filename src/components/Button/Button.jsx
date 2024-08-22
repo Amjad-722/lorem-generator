@@ -32,7 +32,7 @@ const LoremIpsumGenerator = () => {
 
   return (
     <div className="container mx-auto w-full max-w-4xl my-8 p-4 bg-sky-700 border rounded-lg">
-      <h1 className="text-center mb-4 text-4xl text-white font-serif">Lorem Ipsum Generator</h1>
+      <h1 className="text-center mb-6 text-5xl  text-white font-bold">Lorem Ipsum Generator</h1>
       <div className="flex flex-row w-full space-x-2">
         <input
           className="py-2 px-4 text-xl font-semibold text-center text-white transition duration-300 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 ease md:w-auto"
